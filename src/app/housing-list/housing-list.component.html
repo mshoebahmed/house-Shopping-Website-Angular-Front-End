@@ -1,0 +1,42 @@
+<tr>
+  <td>
+    
+      <div>
+        <label for="location-search"> Search for a new place</label>
+        <input id="location-search" placeholder="Ex. Chicago" #search (input)="searchHousingLocations(search.value)" />
+      </div>
+  </td>
+  <td>
+
+    <div>
+      <app-edit-housing 
+        [editObject]="editDataObject" 
+      ></app-edit-housing>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td> <div *ngFor="let list of results">
+    <p>{{ list.city }}</p>
+    <img [src]="list?.photo" alt="location.name" />
+    <button (click)="selectHousingLocation(list)">view</button>
+  </div></td>
+  <td></td>
+</tr>
+
+
+
+<ng-container *ngIf="selectedHouseCondition">
+  <div class="overlay">
+    <div class="popup">
+      <button class="close" (click)="selectedHouseCondition = false">X</button>
+      <app-hosuing-details
+        [houseDetails]="selectedHouse"
+        (editObject)="getEditData($event)"
+        (deleteObject)="deleteData($event)"
+      >
+      </app-hosuing-details>
+    </div>
+  </div>
+</ng-container>

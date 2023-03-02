@@ -1,0 +1,48 @@
+<form #myFrom = "ngForm" (input) = "checkIndex()">
+    <div class="form__group field">
+<label for="name" class="form__label">Name </label>
+    <input id=Name name="Name" class="form__field" placeholder="Enter Name" [(ngModel)]="editObject.name" >
+
+</div>
+<br>
+<div class="form__group field">
+<label for="name" class="form__label">City </label>
+    <input id=city name="city" class="form__field" placeholder="Enter city" [(ngModel)]="editObject.city">
+
+</div>
+<br>
+<div class="form__group field">
+<label for="name" class="form__label">State</label>
+    <input id=state name="state" class="form__field" placeholder="Enter state" [(ngModel)]="editObject.state">
+
+</div>
+<br>
+<div class="form__group field">
+<label for="name" class="form__label">Available Roomd</label>
+    <input id=availableUnits name="availableUnits" class="form__field" placeholder="Enter availableUnits" [(ngModel)]="editObject.availableUnits">
+
+</div>
+<br>
+<div class="form__group field">
+<label for="name" class="form__label">wifi </label>
+    <input id=wifi name="wifi" class="form__field" placeholder="Enter wifi" [(ngModel)]="editObject.wifi">
+
+</div>
+<br>
+<div class="form__group field">
+<label for="name" class="form__label">laundry</label>
+    <input id=laundry name="laundry" class="form__field" placeholder="Enter laundry" [(ngModel)]="editObject.laundry">
+
+</div>
+<br>
+<div class="form__group field">
+<label for="name" class="form__label">photo</label>
+    <input id=photo type="file" name="photo" class="form__field" accept=".jpg" placeholder="Enter photo URL" [(ngModel)]="editObject.photo">
+
+</div>
+<br>
+</form>
+
+
+<button *ngIf="inputType == false" (click)="addHouse()">Add/Update</button>
+

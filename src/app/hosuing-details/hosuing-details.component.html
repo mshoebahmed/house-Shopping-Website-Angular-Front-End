@@ -1,0 +1,16 @@
+<div>
+<img [src]="houseDetails?.photo" alt="location.name" />
+</div>
+    <ul>
+      <li>Name: {{houseDetails.name}}</li>
+      <li>city: {{houseDetails.city}}</li>
+      <li>state: {{houseDetails.state}}</li>
+      <li>availableUnits: {{houseDetails.availableUnits}}</li>
+      <li>wifi: {{houseDetails.wifi}}</li>
+      <li>laundry: {{houseDetails.laundry}}</li>
+     
+    </ul>
+         <button (click)="editDetails()">Edit</button>   
+        <button (click)="deleteDetails()">Delete</button>   
+    
+
